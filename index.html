@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: wheat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        canvas{
+            border: 1px solid black;
+            object-fit: contain;
+            width: 100vw;
+            max-height: 100vh;
+            image-rendering: pixelated;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="160" height="90"></canvas>
+    <script src="index.js"></script>
+</body>
+</html>
