@@ -27,11 +27,11 @@ const loop = () => {
                     board[x][y+1]='sand_'
                     board[x][y]='air'
                 }
-                else if(y!=height-1&&x!=0&&board[x-1][y+1]=='air'){
+                else if((y!=height-1&&x!=0&&board[x-1][y+1]=='air')&&board[x-1][y]=='air'){
                     board[x-1][y+1]='sand_'
                     board[x][y]='air'
                 }
-                else if(y!=height-1&&x!=width-1&&board[x+1][y+1]=='air'){
+                else if((y!=height-1&&x!=width-1&&board[x+1][y+1]=='air')&&board[x+1][y]=='air'){
                     board[x+1][y+1]='sand_'
                     board[x][y]='air'
                 }
@@ -57,6 +57,7 @@ loop()
 console.log(-perf+performance.now())
 
 canvas.addEventListener('mousemove', e => {
+    console.log('mouse')
     const rect = e.target.getBoundingClientRect()
     const scaleX = canvas.width / rect.width
     const scaleY = canvas.height / rect.height
@@ -71,7 +72,6 @@ canvas.addEventListener('mousemove', e => {
     if(selected&&mouseDown){
         board[mouseX][mouseY]=selected
     }
-
 })
 addEventListener('mousedown', e => {
     if(e.button==0){
